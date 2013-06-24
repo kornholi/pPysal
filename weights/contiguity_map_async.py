@@ -100,7 +100,7 @@ if __name__ == "__main__":
     cores = int(sys.argv[1])
     print "This version uses map_async with a callback function and {} cores.".format(cores)
 
-    fnames = ['1024_lattice.shp', '10000_lattice.shp', '50176_lattice.shp', '100489_lattice.shp', '1000_poly.shp', '10000_poly.shp', '50000_poly.shp', '100000_poly.shp']
+    fnames = ['1024_lattice.shp', '10000_lattice.shp', '50176_lattice.shp', '1000_poly.shp', '10000_poly.shp', '50000_poly.shp']
     
     for fname in fnames:
         res = bin_shapefile('TestData/'+fname)

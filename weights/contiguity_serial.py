@@ -1,5 +1,4 @@
 #Contiguity using map_async
-
 import pysal
 from binning import bin_shapefile, bbcommon
 from collections import defaultdict
@@ -8,7 +7,7 @@ import time
 
 def check_joins(weight_type='ROOK', polygon_ids = []):
     t1 = time.time()
-    
+     
     w = {}
     weight_type = weight_type.upper()
 
@@ -58,7 +57,7 @@ def check_joins(weight_type='ROOK', polygon_ids = []):
     else:
         print 'unsupported weight type'
         return None
-    
+   
     t2 = time.time()
     return (t2 - t1)
 
@@ -66,7 +65,7 @@ if __name__ == "__main__":
 
     print "This version runs in serial."
     
-    fnames = ['1024_lattice.shp', '10000_lattice.shp', '50176_lattice.shp', '100489_lattice.shp', '1000_poly.shp', '10000_poly.shp', '50000_poly.shp', '100000_poly.shp']
+    fnames = ['1024_lattice.shp', '10000_lattice.shp', '50176_lattice.shp', '1000_poly.shp', '10000_poly.shp', '50000_poly.shp']
     
     for fname in fnames:
         res = bin_shapefile('TestData/'+fname)
@@ -74,7 +73,7 @@ if __name__ == "__main__":
         global potential_neighbors 
         shapes = res['shapes']
         potential_neighbors = res['potential_neighbors']   
-        
+       
         t = check_joins()
         
         print "{} required {} seconds.".format(fname, t)
